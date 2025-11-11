@@ -84,10 +84,9 @@
 
 body {
   margin: 0;
-  display: flex;
   min-width: 320px;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -96,30 +95,6 @@ body {
   min-width: 0;
   display: flex;
 }
-
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
 
 .sidebar {
   transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -162,6 +137,17 @@ button:focus-visible {
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
+.sidebar-content-horizontal {
+  flex: 0 0 auto;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebar-content-visible {
   opacity: 1;
   visibility: visible;
@@ -181,6 +167,23 @@ button:focus-visible {
   margin-bottom: 0.25rem;
   padding: 10px;
 }
+
+.sidebar-item-small {
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, padding 150ms ease-in-out;
+  border-radius: 4px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item-small:hover {
+  background-color: var(--color-hover-bg);
+  color: var(--color-accent);
+}
+
 
 .sidebar-item:hover {
   background-color: var(--color-hover-bg);

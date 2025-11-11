@@ -6,9 +6,18 @@ import emailjs from "@emailjs/browser";
 
 // Zod schema for form validation
 const contactSchema = z.object({
-  name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
-  email: z.string().min(1, "Email is required").email("Please enter a valid email address"),
-  message: z.string().min(1, "Message is required").min(10, "Message must be at least 10 characters"),
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .min(2, "Name must be at least 2 characters"),
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address"),
+  message: z
+    .string()
+    .min(1, "Message is required")
+    .min(10, "Message must be at least 10 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -67,7 +76,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className=" max-w-2xl mx-auto">
+    <div className="w-72 sm:w-96 lg:w-full h-1/2">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <label
@@ -85,7 +94,9 @@ export default function ContactForm() {
             style={{
               backgroundColor: "var(--color-surface)",
               color: "var(--color-text)",
-              borderColor: errors.name ? "var(--color-error)" : "var(--color-border)",
+              borderColor: errors.name
+                ? "var(--color-error)"
+                : "var(--color-border)",
             }}
             placeholder="Your name"
           />
@@ -111,7 +122,9 @@ export default function ContactForm() {
             style={{
               backgroundColor: "var(--color-surface)",
               color: "var(--color-text)",
-              borderColor: errors.email ? "var(--color-error)" : "var(--color-border)",
+              borderColor: errors.email
+                ? "var(--color-error)"
+                : "var(--color-border)",
             }}
             placeholder="your.email@example.com"
           />
@@ -138,7 +151,9 @@ export default function ContactForm() {
             style={{
               backgroundColor: "var(--color-surface)",
               color: "var(--color-text)",
-              borderColor: errors.message ? "var(--color-error)" : "var(--color-border)",
+              borderColor: errors.message
+                ? "var(--color-error)"
+                : "var(--color-border)",
             }}
             placeholder="Your message here..."
           />
@@ -151,7 +166,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full mb-8 px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             backgroundColor: isSubmitting
               ? "var(--color-accent-muted)"
@@ -160,7 +175,8 @@ export default function ContactForm() {
           }}
           onMouseEnter={(e) => {
             if (!isSubmitting) {
-              e.currentTarget.style.backgroundColor = "var(--color-accent-hover)";
+              e.currentTarget.style.backgroundColor =
+                "var(--color-accent-hover)";
             }
           }}
           onMouseLeave={(e) => {

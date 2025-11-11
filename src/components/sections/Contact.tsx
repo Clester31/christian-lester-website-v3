@@ -2,13 +2,14 @@ import ContactForm from "../forms/ContactForm";
 
 export default function Contact() {
   return (
-    <div className="flex flex-row gap-8 mx-auto">
-      <div className="w-1/2 flex flex-col text-xl items-center my-auto">
-        <h1 className="w-3/4 text-center">
+    <div className="flex flex-col lg:flex-row gap-8 mx-auto ">
+      <div className="lg:w-1/2 flex flex-col items-center">
+        <h1 className="w-4/5 text-center text-md md:text-lg lg:text-xl">
           You can get in touch with me through the contact info listed below or
-          you can use the form on the right to send me an email. I will respond to all requests as quickly as possible. Thank you!
+          you can use the form on the right to send me an email. I will respond
+          to all requests as quickly as possible. Thank you!
         </h1>
-        <div className="ml-4 mt-8 text-xl border border-(--color-border) py-4 px-16 rounded-xl bg-(--color-card)">
+        <div className="ml-4 mt-8 text-md md:text-lg lg:text-xl border border-(--color-border) py-4 px-8 xl:px-16 rounded-xl bg-(--color-card)">
           <ul className="flex flex-col gap-2">
             <li className="flex flex-row items-center gap-2">
               <i className="fa-solid fa-envelope" />
@@ -39,7 +40,8 @@ export default function Contact() {
           </ul>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="flex flex-col items-center mx-auto w-1/2">
+        <h1 className="flex justify-center text-xl">Email Form</h1>
         <ContactForm />
       </div>
     </div>

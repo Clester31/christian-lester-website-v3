@@ -16,10 +16,10 @@ export default function Skills() {
   )
 
   return (
-    <div className="flex flex-col m-auto gap-8">
+    <div className="flex flex-col m-auto gap-8 mb-8">
       <div className="bg-(--color-card) p-4 rounded-xl border border-(--color-border) gap-2 flex flex-col">
         <h1 className="text-center text-xl font-semibold">Front-End</h1>
-        <div className="grid grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 place-items-center md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {frontendSkills.map((skill, index) => {
             return (
               <SkillsBadge
@@ -34,7 +34,7 @@ export default function Skills() {
       </div>
       <div className="bg-(--color-card) p-4 rounded-xl border border-(--color-border) gap-2 flex flex-col">
         <h1 className="text-center text-xl font-semibold">Back-End</h1>
-        <div className="grid grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 place-items-center md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {backendSkills.map((skill, index) => {
             return (
               <SkillsBadge
@@ -49,7 +49,7 @@ export default function Skills() {
       </div>
       <div className="bg-(--color-card) p-4 rounded-xl border border-(--color-border) gap-2 flex flex-col">
         <h1 className="text-center text-xl font-semibold">Other Languages / Tools</h1>
-        <div className="grid grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 place-items-center md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {langSkills.map((skill, index) => {
             return (
               <SkillsBadge
