@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* dark */
+  --color-bg: #0b0f1c;
+  --color-nav: #101525;
+  --color-surface: #12172a;
+  --color-card: #141830;
+  --color-border: #2c304b;
+  --color-badge: #0a1022;
+
+  --color-text: #e8ecf4;
+  --color-text-muted: #9ba3be;
+  --color-text-inverted: #0b0f1c;
+
+  --color-accent: #56e4be;
+  --color-accent-hover: #94e4cd;
+  --color-accent-muted: #2b8f79;
+
+  --color-success: #2ecc71;
+  --color-warning: #f1c40f;
+  --color-error: #e74c3c;
+  --color-info: #3498db;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.55);
+
+  --color-divider: rgba(255, 255, 255, 0.08);
+  --color-overlay: rgba(11, 15, 28, 0.7);
+  --color-hover-bg: #222a4a;
+  --color-focus-ring: rgba(63, 224, 181, 0.5);
+
+  font-family: "Outfit", 'Times New Roman', Times, serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light */
+[data-theme="light"] {
+  --color-bg: #f2f1f5;
+  --color-nav: #edebf1;
+  --color-surface: #ffffff;
+  --color-card: #efebf5;
+  --color-border: #c2bbdf;
+  --color-badge: #f8f6ff;
+
+  --color-text: #1a1c23;
+  --color-text-muted: #5c6370;
+  --color-text-inverted: #ffffff;
+
+  --color-accent: #462ecc;
+  --color-accent-hover: #7f70d4;
+  --color-accent-muted: #9c90e0;
+
+  --color-success: #27ae60;
+  --color-warning: #eab308;
+  --color-error: #e53935;
+  --color-info: #2980b9;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 3px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+  --color-divider: rgba(0, 0, 0, 0.08);
+  --color-overlay: rgba(255, 255, 255, 0.7);
+  --color-hover-bg: #d8d6f0;
+  --color-focus-ring: rgba(66, 63, 224, 0.4);
+
+  color-scheme: light;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+}
+
+/* h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+
+.sidebar {
+  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+  border-right: 1px solid var(--color-border);
+}
+
+.sidebar-open {
+  width: 250px;
+  min-width: 250px;
+}
+
+.sidebar-closed {
+  width: 60px;
+  min-width: 60px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.sidebar-header i {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.sidebar-header i:hover {
+  color: var(--color-accent);
+}
+
+.sidebar-content {
+  flex: 1;
+  margin-top: 1rem;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar-content-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-content-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar-item {
+  padding: 0.75rem 0.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, padding 150ms ease-in-out;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  padding: 10px;
+}
+
+.sidebar-item:hover {
+  background-color: var(--color-hover-bg);
+  color: var(--color-accent);
+  padding-left: 32px;
+}
+
+.react-pdf-document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-pdf-page {
+  margin: 0;
+  padding: 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.react-pdf-page > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.react-pdf-page canvas {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.react-pdf-page .react-pdf__Page__canvas {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+}
+
+.react-pdf-page .react-pdf__Page__textContent {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.react-pdf-page .react-pdf__Page__annotations {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-focus-ring);
+}
