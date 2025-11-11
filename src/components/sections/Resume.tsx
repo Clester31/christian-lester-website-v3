@@ -27,10 +27,8 @@ export default function Resume() {
   useEffect(() => {
     const handleResize = () => {
       if (containerRef.current) {
-        // Get container width and height
         const { clientWidth, clientHeight } = containerRef.current;
 
-        // Calculate scaled width to maintain aspect ratio
         const scaledWidth = Math.min(
           clientWidth,
           clientHeight * ASPECT_RATIO,
@@ -41,7 +39,7 @@ export default function Resume() {
       }
     };
 
-    handleResize(); // initial call
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
