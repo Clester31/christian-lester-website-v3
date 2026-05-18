@@ -68,7 +68,7 @@ export default function NavList({ direction, isOpen = true }: NavListProps) {
           setSection({
             sectionName: "projects",
             sectionTitle: "Projects",
-            sectionDescription: "Click on a project to view it in GitHub",
+            sectionDescription: "Click on a project to view it in GitHub/deployed link",
             sectionComponent: <Projects />,
           })
         }
